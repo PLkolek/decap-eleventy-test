@@ -2,15 +2,28 @@
 layout: default
 ---
 
-<div class="container max-w-4xl mt-6 px-6">
-  <div class="pb-5 mb-5 border-b border-gray-100">
-    <h1 class="font-bold text-5xl">{{title}}</h1>
-    <p class="text-center text-base leading-6 font-medium text-gray-500">
-      <time>
-        {{ date | readableDate }} by
-        <a>{{ author }}</a>
+<main class="container max-w-4xl mt-6 px-6">
+  <header class="mati-w-screen px-12 relative h-96 xl:h-112 flex justify-center items-center overflow-hidden">    
+    <div class="flex flex-col space-y-3 items-center">
+      <div class="flex font-fancy text-lg text-shady-pink">
+        {% for category in tags %}
+          {% if category !== 'post' %}
+            <a class="hover:text-gray-300" href="/tags/{{category | lowercase}}" rel="tag">
+              {{ category }}
+            </a>
+            {% if not loop.last %}
+              <span class="whitespace-pre-wrap">, </span>
+            {% endif %}
+          {% endif %}
+        {% endfor %}
+      </div>
+      <h1 class="font-serif uppercase text-2xl font-semibold md:font-normal md:text-5xl tracking-wide">{{ title }}</h1>
+      <time class="uppercase text-xs text-gray-400 font-sans2 tracking-wide" datetime="{{date}}">
+        {{ date | readableDate }}
       </time>
-    </p>
-  </div>
+    </div>
+    <img class="-z-20 absolute left-0 top-1/2 -translate-y-1/2 right-0 w-full h-auto" src="{{image}}" alt="" />
+    <div class="-z-10 absolute left-0 top-0 bottom-0 right-0 bg-white/80"></div>
+  </header>
   <article class="prose lg:prose-xl my-4 mx-auto">{{ content | safe }}</article>
-</div>
+</main> 

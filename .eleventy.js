@@ -1,6 +1,6 @@
 const yaml = require("js-yaml");
 const { DateTime } = require("luxon");
-const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
+const { eleventyImageTransformPlugin } = require("@11ty/eleventy-img");
 const htmlmin = require("html-minifier");
 
 module.exports = function (eleventyConfig) {
@@ -12,13 +12,14 @@ module.exports = function (eleventyConfig) {
 
   // human readable date
   eleventyConfig.addFilter("readableDate", (dateObj) => {
-    return DateTime.fromJSDate(dateObj, { zone: "utc" }).toFormat(
-      "dd LLL yyyy"
+    return DateTime.fromJSDate(dateObj, { zone: "utc" }).toLocaleString(
+      DateTime.DATE_FULL
     );
   });
 
-  // Syntax Highlighting for Code blocks
-  eleventyConfig.addPlugin(syntaxHighlight);
+  eleventyConfig.addFilter("lowercase", (string) => {
+    return string.toLowerCase();
+  });
 
   // To Support .yaml Extension in _data
   // You may remove this if you can use JSON
@@ -49,6 +50,18 @@ module.exports = function (eleventyConfig) {
     }
 
     return content;
+  });
+
+  eleventyConfig.addPlugin(eleventyImageTransformPlugin, {
+    extensions: "html",
+    formats: ["webp"],
+    defaultAttributes: {
+      loading: "lazy",
+      decoding: "async",
+    },
+    sharpWebpOptions: {
+      quality: 86,
+    },
   });
 
   // Let Eleventy transform HTML files as nunjucks
