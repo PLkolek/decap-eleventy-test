@@ -31,6 +31,19 @@ collections:
         multiple: true
         create: true
         options: ["Techniques", "Tips", "Stitch patterns", "Ebook"]
+  - label: "Sidebar"
+    name: "sidebar"
+    editor:
+      preview: false
+    files:
+      - label: "About me"
+        name: "about_me"
+        file: "src/_data/about_me.yaml"
+        fields:
+          - { label: Title, name: title, widget: string }
+          - { label: Description, name: description, widget: string }
+          - { label: Image, name: image, widget: image }
+
   - label: "Settings"
     name: "settings"
     editor:

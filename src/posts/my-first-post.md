@@ -17,7 +17,7 @@ Once my first summer knitalong ended, I decided to gather all the valuable tips,
 
 You can find detailed information on how to make, style and even modify this summer knit in the ebook (100 pages full of valuable and interesting content!), which you can buy in my [Ravelry or Payhip ](https://marzenakolaczek.com/sydney-summer-knits-ebook-2/)store. But in this post I will share all the extra resources that may help you work with [Darling Dress](https://www.ravelry.com/patterns/library/darling-dress-2) pattern and make your knitting smooth and trouble-free. Enjoy!
 
-# Article content
+## Article content
 
 1. Yarn and fabric properties.
 2. How to modify.
@@ -25,7 +25,7 @@ You can find detailed information on how to make, style and even modify this sum
 
 ![TODO](/static/img/darling03-scaled.jpg "TODO")
 
-# Yarn and fabric properties
+## Yarn and fabric properties
 
 Using a plant-based and non-elastic fiber is key to success when working on a summer dress. Such a dress should meet different criteria than a dress made for winter or autumn. We don’t want the fabric to wrap around and stick to our bodies as is the case for a comfy woolen one – this is what makes winter clothes such warm and comforting pieces of garments.
 
@@ -51,7 +51,7 @@ Remember that stiffness does not mean lack of softness. Antigone is a truly nice
 
 And last, but not least – the smoothness of the thread. To highlight lace straps, use a smooth yarn with slight shine. Stockinette st always look fabulous, but lace requires a special approach. Avoid non-solid colours and textures.
 
-# How to modify
+## How to modify
 
 My idea for this project was to create a dress that is both a bit fancy and incredibly easy for knitters to adjust! Dresses can be tricky – we have different heights and body shapes, and what is comfortable for one person might not be for another.
 
@@ -76,7 +76,7 @@ TODO: Note
 
 You can make your dress any length you desire! You can create a crop top, a knee-length dress, or even an ankle-length maxi dress. If you are making a crop top, skip the split altogether. For a maxi dress, consider adding a long, feminine slit that starts above your knee.
 
-# Blocking
+## Blocking
 
 Read my article [The gist of blocking your knits](https://www.ravelry.com/discuss/sydney-summer-knits-kal/4314723/1-25#2) to learn more about the purpose and general rules of blocking. I believe it will help you to understand the process.
 
@@ -86,7 +86,7 @@ TODO: video 3
 
 TODO: blocking instruction
 
-# About Sydney Summer Knits collection
+## About Sydney Summer Knits collection
 
 [Sydney Summer Knits](https://marzenakolaczek.com/sydney-summer-knits-designs-preview/) collection contains four brand-new, unique summer patterns inspired by my new home – Sydney. You will find here three tops and one dress, each design mirroring a different feature of the city. All the designs are made in style closest to my heart, which I dare to name modern romanticism.
 
