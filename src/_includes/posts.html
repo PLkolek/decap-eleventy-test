@@ -21,7 +21,7 @@ layout: default
         {% endfor %}
       </div>
       <h1 class="font-serif uppercase text-2xl font-semibold md:font-normal md:text-5xl tracking-wide">{{ title }}</h1>
-      <time class="uppercase text-xs text-gray-400 font-sans2 tracking-wide" datetime="{{date}}">
+      <time class="uppercase text-xs text-neutral-400 font-sans2 tracking-wide" datetime="{{date}}">
         {{ date | readableDate }}
       </time>
     </div>
@@ -37,8 +37,17 @@ layout: default
     >
       {{ content | dropcap | safe }}
     </article>
-    <aside class="w-1/4 h-xl">
-      {{about_me.title}}
+    <!-- TODO: reactive design -->
+    <aside class="w-1/4 h-xl text-center">
+      <section>
+        <h2 class="font-serif uppercase tracking-wide text-neutral-900 relative pb-2 mb-6
+        after:border-t after:w-4 after:border-neutral-900 
+        after:absolute after:left-1/2 after:-translate-x-1/2 after:bottom-0">
+          {{about_me.title}}
+        </h2>
+        <img eleventy:widths="300" class="w-5/6 h-auto rounded-full mx-auto mb-4" src="{{about_me.image}}" alt="Marzena, blog author" />
+        <p class="text-neutral-700 text-sm/loose">{{about_me.description}}</p>
+      </section>
     </div>
   </div>
 </main> 
