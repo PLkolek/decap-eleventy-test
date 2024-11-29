@@ -6,10 +6,13 @@ module.exports = {
     },
     extend: {
       colors: {
-        "shady-pink": "rgb(209, 136, 124)",
+        "shady-pink-dark": "rgb(209, 136, 124)",
+        "shady-pink": "rgb(211, 173, 154)",
       },
       spacing: {
-        112: "38rem",
+        112: "28rem",
+        144: "36rem",
+        192: "48rem",
       },
     },
     fontFamily: {

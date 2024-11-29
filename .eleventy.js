@@ -1,6 +1,7 @@
 const yaml = require("js-yaml");
 const { DateTime } = require("luxon");
 const { eleventyImageTransformPlugin } = require("@11ty/eleventy-img");
+const pluginDropcap = require("eleventy-plugin-dropcap");
 const htmlmin = require("html-minifier");
 
 module.exports = function (eleventyConfig) {
@@ -62,6 +63,11 @@ module.exports = function (eleventyConfig) {
     sharpWebpOptions: {
       quality: 86,
     },
+  });
+
+  eleventyConfig.addPlugin(pluginDropcap, {
+    dropCapClass: "mati-drop-cap",
+    hiddenTextClass: "screen-reader-only",
   });
 
   // Let Eleventy transform HTML files as nunjucks

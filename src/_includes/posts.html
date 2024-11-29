@@ -2,10 +2,13 @@
 layout: default
 ---
 
-<main class="container max-w-4xl mt-6 px-6">
-  <header class="mati-w-screen px-12 relative h-96 xl:h-112 flex justify-center items-center overflow-hidden">    
+<main class="container max-w-6xl mt-6 px-6" columns="">
+  <header class="mati-w-screen px-12 mb-10 relative 
+      flex justify-center items-center 
+      h-96 xl:h-144
+      overflow-hidden">    
     <div class="flex flex-col space-y-3 items-center">
-      <div class="flex font-fancy text-lg text-shady-pink">
+      <div class="flex font-fancy text-lg text-shady-pink-dark">
         {% for category in tags %}
           {% if category !== 'post' %}
             <a class="hover:text-gray-300" href="/tags/{{category | lowercase}}" rel="tag">
@@ -25,5 +28,16 @@ layout: default
     <img class="-z-20 absolute left-0 top-1/2 -translate-y-1/2 right-0 w-full h-auto" src="{{image}}" alt="" />
     <div class="-z-10 absolute left-0 top-0 bottom-0 right-0 bg-white/80"></div>
   </header>
-  <article class="prose lg:prose-xl my-4 mx-auto">{{ content | safe }}</article>
+  <div class="flex gap-16">
+    <article class="w-3/4 prose prose-neutral 
+      prose-img:max-h-192 prose-img:w-auto prose-img:mx-auto 
+      prose-a:text-shady-pink prose-a:no-underline
+      prose-h1:font-serif prose-h1:text-3xl prose-h1:tracking-wide
+      my-4 max-w-none"
+    >
+      {{ content | dropcap | safe }}
+    </article>
+    <aside class="w-1/4 bg-red-500 h-xl"></div>
+  </div>
+  
 </main> 

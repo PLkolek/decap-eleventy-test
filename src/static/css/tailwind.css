@@ -23,3 +23,23 @@ body pre[class*="language-"] {
   margin-left: calc(-50vw + 50%);
   margin-right: calc(-50vw + 50%);
 }
+
+@layer components {
+  .mati-drop-cap {
+    @apply text-5xl inline-block float-left mr-2.5;
+  }
+  .markdown p {
+    @apply text-base;
+  }
+}
+
+/* https://github.com/jdsteinbach/eleventy-plugin-dropcap */
+.screen-reader-only {
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
