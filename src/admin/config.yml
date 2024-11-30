@@ -43,6 +43,13 @@ collections:
           - { label: Title, name: title, widget: string }
           - { label: Description, name: description, widget: string }
           - { label: Image, name: image, widget: image }
+      - label: "Banner"
+        name: "sidebar_banner"
+        file: "src/_data/sidebar_banner.yaml"
+        fields:
+          - { label: Image, name: image, widget: image }
+          - { label: URL, name: url, widget: string }
+          - { label: Fallback text, name: alt, widget: string }
 
   - label: "Settings"
     name: "settings"
