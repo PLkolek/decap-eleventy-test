@@ -50,6 +50,19 @@ collections:
           - { label: Image, name: image, widget: image }
           - { label: URL, name: url, widget: string }
           - { label: Fallback text, name: alt, widget: string }
+      - label: "Recent patterns"
+        name: "recent_patterns"
+        file: "src/_data/recent_patterns.yaml"
+        fields:
+          - { label: Title, name: title, widget: string }
+          - label: Patterns
+            name: patterns
+            widget: list
+            fields:
+              - { label: Name, name: name, widget: string }
+              - { label: Image, name: image, widget: image }
+              - { label: URL, name: url, widget: string }
+              - { label: Fallback text, name: alt, widget: string }
 
   - label: "Settings"
     name: "settings"

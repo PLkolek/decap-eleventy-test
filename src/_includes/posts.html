@@ -38,7 +38,7 @@ layout: default
       {{ content | dropcap | safe }}
     </article>
     <!-- TODO: reactive design -->
-    <aside class="w-1/4 h-xl text-center">
+    <aside class="w-1/4 text-center">
       <section class="border-b border-neutral-400 border-dashed pb-8 mb-8">
         <h2 class="font-serif uppercase tracking-wide text-neutral-900 relative pb-2 mb-6
         after:border-t after:w-4 after:border-neutral-900 
@@ -53,7 +53,8 @@ layout: default
           <img eleventy:widths="300" class="w-full h-auto" src="{{sidebar_banner.image}}" alt="{{sidebar_banner.alt}}" />
         </a>
       </section>
-      <section class="flex place-content-center gap-4 -mt-2">
+      <section class="flex place-content-center gap-4 -mt-2
+        border-b border-neutral-400 border-dashed pb-6 mb-8">
         <a href="{{settings.facebook_url}}" rel="external">
           <!-- TODO alt text should be translated -->
           <img class="box-content w-4 p-2" src="/static/img/FB.svg" alt="Facebook icon" />
@@ -66,6 +67,19 @@ layout: default
           <!-- TODO alt text should be translated -->
           <img src="/static/img/Rav.svg" alt="Ravelry icon"/>
         </a>
+      </section>
+      <section>
+        <h2 class="font-serif uppercase tracking-wide text-neutral-900 relative pb-2 mb-6
+        after:border-t after:w-4 after:border-neutral-900 
+        after:absolute after:left-1/2 after:-translate-x-1/2 after:bottom-0">
+          {{recent_patterns.title}}
+        </h2>
+        {% for pattern in recent_patterns.patterns %}
+          <a href="{{pattern.url}}">
+            <img eleventy:widths="300" class="w-full h-auto mb-4" src="{{pattern.image}}" alt="{{pattern.alt}}" />
+            <h3 class="font-serif tracking-wide text-neutral-900 text-base font-normal">{{pattern.name}}</h3>
+          </a>
+        {% endfor %}
       </section>
     </div>
   </div>
