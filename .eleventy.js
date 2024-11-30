@@ -55,7 +55,7 @@ module.exports = function (eleventyConfig) {
 
   eleventyConfig.addPlugin(eleventyImageTransformPlugin, {
     extensions: "html",
-    formats: ["webp"],
+    formats: ["webp", "svg"],
     defaultAttributes: {
       loading: "lazy",
       decoding: "async",
@@ -63,6 +63,7 @@ module.exports = function (eleventyConfig) {
     sharpWebpOptions: {
       quality: 86,
     },
+    svgShortCircuit: "size",
   });
 
   eleventyConfig.addPlugin(pluginDropcap, {

@@ -48,9 +48,23 @@ layout: default
         <img eleventy:widths="300" class="w-5/6 h-auto rounded-full mx-auto mb-4" src="{{about_me.image}}" alt="Marzena, blog author" />
         <p class="text-neutral-700 text-sm/loose">{{about_me.description}}</p>
       </section>
-      <section>
+      <section class="border-b border-neutral-400 border-dashed pb-8 mb-8">
         <a href="{{sidebar_banner.url}}">
           <img eleventy:widths="300" class="w-full h-auto" src="{{sidebar_banner.image}}" alt="{{sidebar_banner.alt}}" />
+        </a>
+      </section>
+      <section class="flex place-content-center gap-4 -mt-2">
+        <a href="{{settings.facebook_url}}" rel="external">
+          <!-- TODO alt text should be translated -->
+          <img class="box-content w-4 p-2" src="/static/img/FB.svg" alt="Facebook icon" />
+        </a>
+        <a class="box-content w-4 p-2" href="{{settings.instagram_url}}" rel="external">
+          <!-- TODO alt text should be translated -->
+          <img src="/static/img/IG.svg" alt="Instagram icon" />
+        </a>
+        <a class="box-content w-4 p-2" href="{{settings.ravelry_url}}" rel="external">
+          <!-- TODO alt text should be translated -->
+          <img src="/static/img/Rav.svg" alt="Ravelry icon"/>
         </a>
       </section>
     </div>
