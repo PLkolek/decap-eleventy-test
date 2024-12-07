@@ -31,6 +31,17 @@ collections:
         multiple: true
         create: true
         options: ["Techniques", "Tips", "Stitch patterns", "Ebook"]
+  - label: "Patterns"
+    name: "patterns"
+    folder: "src/patterns"
+    create: true
+    editor:
+      preview: true
+    fields:
+      - { label: Name, name: name, widget: string }
+      - { label: Image, name: image, widget: image }
+      - { label: Fallback text, name: alt, widget: string }
+      - { label: "Publish Date", name: "date", widget: "datetime" }
   - label: "Sidebar"
     name: "sidebar"
     editor:
@@ -55,14 +66,6 @@ collections:
         file: "src/_data/recent_patterns.yaml"
         fields:
           - { label: Title, name: title, widget: string }
-          - label: Patterns
-            name: patterns
-            widget: list
-            fields:
-              - { label: Name, name: name, widget: string }
-              - { label: Image, name: image, widget: image }
-              - { label: URL, name: url, widget: string }
-              - { label: Fallback text, name: alt, widget: string }
 
   - label: "Settings"
     name: "settings"

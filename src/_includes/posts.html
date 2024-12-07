@@ -11,7 +11,7 @@ layout: default
       <div class="flex font-fancy text-lg text-shady-pink-dark">
         {% for category in tags %}
           {% if category !== 'post' %}
-            <a class="hover:text-gray-300" href="/tags/{{category | lowercase}}" rel="tag">
+            <a class="hover:text-gray-300" href="/tags/{{category | lower}}" rel="tag">
               {{ category }}
             </a>
             {% if not loop.last %}
@@ -76,7 +76,7 @@ layout: default
           {{recent_patterns.title}}
         </h2>
         <div x-data="{
-          size: {{recent_patterns.patterns.length}},
+          size: {{collections.pattern | head(3) | length}},
           currentIndex: 0,
           items: [],
           compute: function(newIndex) {
@@ -92,24 +92,24 @@ layout: default
         }"
         x-init="compute(0)">
           <div class="overflow-hidden flex relative mb-2">
-            {% for pattern in recent_patterns.patterns %}
+            {% for pattern in collections.pattern | reverse | head(3) %}
               <a href="{{pattern.url}}" class="block shrink-0 w-full" x-data="{myIndex: {{loop.index - 1 }}}" 
                 style="transform: translate({{((loop.index-1) % 3 - 1) * 100}}%)"
                 x-bind:class="items[myIndex].classes"
                 x-bind:style="'transform: translate(' + items[myIndex].translateX + '%)'">
-                <img eleventy:widths="300" class="w-full h-auto hover:scale-110 transition-transform delay-100 duration-500" src="{{pattern.image}}" alt="{{pattern.alt}}" />
+                <img eleventy:widths="300" class="w-full h-auto hover:scale-110 transition-transform delay-100 duration-500" src="{{pattern.data.image}}" alt="{{pattern.data.alt}}" />
               </a>
             {% endfor %}
             <button class="absolute text-white text-lg size-8 -mt-4 left-2 top-1/2 bg-shady-pink/70 hover:bg-shady-pink-dark/70" @click.prevent="compute(currentIndex + 1)">&lt;</button>
             <button class="absolute text-white text-lg size-8 -mt-4 right-2 top-1/2 bg-shady-pink/70 hover:bg-shady-pink-dark/70" @click.prevent="compute(currentIndex - 1)">&gt;</button>
           </div>
           <div class="overflow-hidden flex">
-            {% for pattern in recent_patterns.patterns %}
+            {% for pattern in collections.pattern | reverse | head(3) %}
               <a href="{{pattern.url}}" class="block shrink-0 w-full text-neutral-900 hover:text-shady-pink" x-data="{myIndex: {{loop.index - 1 }}}" 
                 style="transform: translate({{((loop.index-1) % 3 - 1) * 100}}%)"
                 x-bind:class="items[myIndex].classes"
                 x-bind:style="'transform: translate(' + items[myIndex].translateX + '%)'">
-                <h3 class="font-serif tracking-wide text-lg font-normal mb-1">{{pattern.name}}</h3>
+                <h3 class="font-serif tracking-wide text-lg font-normal mb-1">{{pattern.data.name}}</h3>
               </a>
             {% endfor %}
           </div>

@@ -18,8 +18,8 @@ module.exports = function (eleventyConfig) {
     );
   });
 
-  eleventyConfig.addFilter("lowercase", (string) => {
-    return string.toLowerCase();
+  eleventyConfig.addFilter("head", (list, num = 10) => {
+    return list.slice(0, num);
   });
 
   // To Support .yaml Extension in _data
