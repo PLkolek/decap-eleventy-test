@@ -77,9 +77,13 @@ layout: default
         </h2>
         <div x-data="{
           size: {{collections.pattern | head(3) | length}},
+          timeoutId: null,
           currentIndex: 0,
           items: [],
           compute: function(newIndex) {
+            if(this.timeoutId != null) {
+              clearTimeout(this.timeoutId);
+            }
             let oldIndex = this.currentIndex;
             this.currentIndex = (newIndex + this.size) % this.size;
             for(let i=0;i&lt;this.size;i++) {
@@ -88,6 +92,7 @@ layout: default
                 classes: (i == oldIndex || i == this.currentIndex) ? 'transition-transform' : '',
               }
             }
+            this.timeoutId = setTimeout(() => this.compute(this.currentIndex + 1), 5000)
           }
         }"
         x-init="compute(0)">
@@ -100,8 +105,8 @@ layout: default
                 <img eleventy:widths="300" class="w-full h-auto hover:scale-110 transition-transform delay-100 duration-500" src="{{pattern.data.image}}" alt="{{pattern.data.alt}}" />
               </a>
             {% endfor %}
-            <button class="absolute text-white text-lg size-8 -mt-4 left-2 top-1/2 bg-shady-pink/70 hover:bg-shady-pink-dark/70" @click.prevent="compute(currentIndex + 1)">&lt;</button>
-            <button class="absolute text-white text-lg size-8 -mt-4 right-2 top-1/2 bg-shady-pink/70 hover:bg-shady-pink-dark/70" @click.prevent="compute(currentIndex - 1)">&gt;</button>
+            <button class="absolute text-white text-lg size-8 -mt-4 left-2 top-1/2 bg-shady-pink/70 hover:bg-shady-pink-dark/70" @click.prevent="compute(currentIndex - 1)">&lt;</button>
+            <button class="absolute text-white text-lg size-8 -mt-4 right-2 top-1/2 bg-shady-pink/70 hover:bg-shady-pink-dark/70" @click.prevent="compute(currentIndex + 1)">&gt;</button>
           </div>
           <div class="overflow-hidden flex">
             {% for pattern in collections.pattern | reverse | head(3) %}
