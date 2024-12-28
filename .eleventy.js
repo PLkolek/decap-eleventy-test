@@ -1,6 +1,6 @@
 const yaml = require("js-yaml");
 const { DateTime } = require("luxon");
-const { eleventyImageTransformPlugin } = require("@11ty/eleventy-img");
+const Image = require("@11ty/eleventy-img");
 const pluginDropcap = require("eleventy-plugin-dropcap");
 const htmlmin = require("html-minifier");
 
@@ -29,6 +29,7 @@ module.exports = function (eleventyConfig) {
   // Copy Static Files to /_Site
   eleventyConfig.addPassthroughCopy({
     "./src/admin/config.yml": "./admin/config.yml",
+    "./src/admin/index.html": "./admin/index.html",
     "./node_modules/alpinejs/dist/cdn.min.js": "./static/js/alpine.js",
   });
 
@@ -53,8 +54,7 @@ module.exports = function (eleventyConfig) {
     return content;
   });
 
-  eleventyConfig.addPlugin(eleventyImageTransformPlugin, {
-    extensions: "html",
+  const imageOptions = {
     formats: ["webp", "svg"],
     defaultAttributes: {
       loading: "lazy",
@@ -64,6 +64,11 @@ module.exports = function (eleventyConfig) {
       quality: 86,
     },
     svgShortCircuit: "size",
+  };
+
+  eleventyConfig.addPlugin(Image.eleventyImageTransformPlugin, {
+    ...imageOptions,
+    extensions: "html",
   });
 
   eleventyConfig.addPlugin(pluginDropcap, {
@@ -71,8 +76,34 @@ module.exports = function (eleventyConfig) {
     hiddenTextClass: "screen-reader-only",
   });
 
+  eleventyConfig.addShortcode(
+    "lightbox",
+    async function (imageUrl, alt = "", title = "") {
+      let metadata = await Image("src/" + imageUrl, {
+        ...imageOptions,
+        outputDir: "_site/img",
+        widths: ["auto"],
+      });
+
+      let imageAttributes = {
+        alt,
+        title,
+      };
+
+      const image = Image.generateObject(metadata, imageAttributes);
+
+      //Keep in sync with max article width
+      return `<a x-on:click.stop="$dispatch('img-modal', {  image: ${JSON.stringify(
+        image
+      ).replaceAll('"', "'")}})" class="cursor-pointer">
+        <img src="${imageUrl}" eleventy:widths="780" alt="${alt}" title="${title}" />
+      </a>`;
+    }
+  );
+
   // Let Eleventy transform HTML files as nunjucks
   // So that we can use .html instead of .njk
+  eleventyConfig.ignores.add("src/admin/**");
   return {
     dir: {
       input: "src",

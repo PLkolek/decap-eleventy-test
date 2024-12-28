@@ -87,9 +87,8 @@
         toBlock: function (data) {
           return `<details><summary>${data.summary}</summary>${data.contents}</details>`;
         },
-        // Preview output for this component. Can either be a string or a React component
-        // (component gives better render performance)
         toPreview: function (data) {
+          // https://github.com/decaporg/decap-cms/blob/main/packages/decap-cms-widget-image/src/ImagePreview.js
           return `
             <details>
               <summary>${data.summary}</summary>
@@ -97,6 +96,45 @@
               ${data.contents}
             
             </details>
+            `;
+        },
+      });
+      
+      CMS.registerEditorComponent({
+        id: "lightbox",
+        // Visible label
+        label: "Zoomable image",
+        fields: [
+          {
+            name: "image",
+            label: "Image",
+            widget: "image",
+          }, {
+            name: "alt",
+            label: "Alt text",
+            widget: "string",
+          }, {
+            name: "title",
+            label: "Title",
+            widget: "string",
+          }
+        ],
+        pattern: /^{%\s*lightbox "(.*?)"\s*(?:,\s*"(.*?)"\s*)?(?:,\s*"(.*?)"\s*)?%}$/ms,
+        fromBlock: function (match) {
+          return {
+            image: match[1],
+            alt: match[2] ?? "",
+            title: match[3] ?? "",
+          };
+        },
+        toBlock: function (data) {
+          return `{% lightbox "${data.image}", "${data.alt}, "${data.title}" %}`;
+        },
+        // Preview output for this component. Can either be a string or a React component
+        // (component gives better render performance)
+        toPreview: function (data) {
+          return `
+            <img src="${data.image}" role="presentation" class="block max=w-full h-auto"/>
             `;
         },
       });

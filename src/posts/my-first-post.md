@@ -23,7 +23,7 @@ You can find detailed information on how to make, style and even modify this sum
 2. How to modify.
 3. Blocking
 
-![TODO](/static/img/darling03-scaled.jpg "TODO")
+{% lightbox "/static/img/darling03-scaled.jpg", "Model wearing a grey, above-the-knee, sleeveless dress viewed from behind standing in a harbour" %}
 
 ## Yarn and fabric properties
 
@@ -59,16 +59,16 @@ The key features here are the lace straps and open, square necklines. Then, ther
 
 Even the top part (straps and necklines) are designed to be easily customized for your body! I assure you, following my tips will result in a great-looking garment
 
-![TODO](/static/img/darling09-scaled.jpg "TODO")
+{% lightbox "/static/img/darling09-scaled.jpg" %}
 
-![TODO](/static/img/darling08-scaled.jpg "TODO")
+{% lightbox "/static/img/darling08-scaled.jpg" %}
 
 Before you start the Darling Dress, consider how deep you like your necklines. For the square neckline, I prefer a deeper cut, especially in the back.
 
 But remember, everyone’s proportions and needs are different. Always measure yourself or a similar dress in your
 wardrobe before deciding. Once your straps are ready, hold them up to the mirror, fold them in half, and see where they sit on your chest. Keep in mind that the finished dress will weigh them down slightly, so when blocking them, focus on length first and avoid stretching them too much sideways.
 
-![TODO](/static/img/darling01-scaled.jpg "TODO")
+{% lightbox "/static/img/darling01-scaled.jpg" %}
 
 Once the necklines are done and the front and back are joined, you can think about the dress’s body shape. The original pattern provides a classic A-line silhouette, but don’t be afraid to adjust it! If you like a truly oversized look, simply decrease the space between increases (add stitches more often). If you prefer something more fitted, space out increases more than provided. No matter what distance you choose, maintain it consistently throughout the project!
 

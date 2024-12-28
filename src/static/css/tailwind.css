@@ -24,6 +24,10 @@ body pre[class*="language-"] {
   margin-right: calc(-50vw + 50%);
 }
 
+[x-cloak] {
+  display: none !important;
+}
+
 @layer components {
   .mati-drop-cap {
     @apply text-5xl inline-block float-left mr-2.5;
