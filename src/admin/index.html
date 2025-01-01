@@ -138,6 +138,32 @@
             `;
         },
       });
+      
+      CMS.registerEditorComponent({
+        id: "video",
+        label: "YouTube video",
+        fields: [
+          {
+            name: "html",
+            label: "Embed code",
+            widget: "text",
+          }
+        ],
+        pattern: /^{%\s*video\s*%}(.*?){%\s*endvideo\s*%}$/ms,
+        fromBlock: function (match) {
+          return {
+            html: match[1]
+          };
+        },
+        toBlock: function (data) {
+          return `{% video %}${data.image}{% endvideo %}`;
+        },
+        // Preview output for this component. Can either be a string or a React component
+        // (component gives better render performance)
+        toPreview: function (data) {
+          return `<div class="flex justify-center">${data.html}</div>`;
+        },
+      });
     </script>
   </body>
 </html>

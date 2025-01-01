@@ -34,14 +34,20 @@ slowly.Linen is a highly breathable fabric. It is more stiff and that’s why it
 
 Another important factor that makes plant-based fibers better than wool when working on a summer dress is their lack of elasticity. Watch this video to see the difference between yarn made from pure wool and 100% linen, in my case: [Antigone from De Rerum Natura](https://www.dererumnatura.fr/en/yarns/136-antigone-275.html#/couleur-ecume).
 
-TODO: video
+{% video %}
+
+<iframe width="425" height="756" src="https://www.youtube.com/embed/8-LbIkeCeg4" title="Sydney Summer Knits KAL [Darling Dress] Wool vs linen" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+{% endvideo %}
 
 The thread on the left is wool. You can see how much it stretches when pulling and changes its thickness. It means that a big piece of fabric made from such a spongy yarn, will definitely stretch out significantly, losing its shape and nice look. Now take a look at the linen thread. You may notice it barely keeps the twist. That is good! This, combined with a linen durability, makes the thread hard to stretch out. This tells us that after the first, rather light,
 stretching (after blocking and first wearing), the thread reaches its maximum length and will not surprise us at the end of the day by doubling it.
 
 Watch this video to see the fabric made from linen and its properties:
 
-TODO: video 2
+{% video %}
+
+<iframe width="425" height="756" src="https://www.youtube.com/embed/tJuTS7NIdUs" title="Darling Dress Sydney Summer Knits: FABRIC PROPERTIES" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+{% endvideo %}
 
 The fabric stretches only slightly downwards. At the same time, it can be easily stretched sideways, and this is really useful for all projects requiring negative ease.
 
@@ -82,7 +88,10 @@ Read my article [The gist of blocking your knits](https://www.ravelry.com/discus
 
 Watch this short video to find out how to block your Darling Dress successfully:
 
-TODO: video 3
+{% video %}
+
+<iframe width="425" height="756" src="https://www.youtube.com/embed/LafxGaw7oc0" title="Sydney Summer Knits KAL [Darling Dress] Blocking" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+{% endvideo %}
 
 TODO: blocking instruction
 

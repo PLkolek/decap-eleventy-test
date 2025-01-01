@@ -101,6 +101,10 @@ module.exports = function (eleventyConfig) {
     }
   );
 
+  eleventyConfig.addPairedShortcode("video", function (content) {
+    return `<div class="flex justify-center">${content}</div>`;
+  });
+
   // Let Eleventy transform HTML files as nunjucks
   // So that we can use .html instead of .njk
   eleventyConfig.ignores.add("src/admin/**");
