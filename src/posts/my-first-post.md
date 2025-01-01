@@ -78,7 +78,9 @@ wardrobe before deciding. Once your straps are ready, hold them up to the mirror
 
 Once the necklines are done and the front and back are joined, you can think about the dress’s body shape. The original pattern provides a classic A-line silhouette, but don’t be afraid to adjust it! If you like a truly oversized look, simply decrease the space between increases (add stitches more often). If you prefer something more fitted, space out increases more than provided. No matter what distance you choose, maintain it consistently throughout the project!
 
-TODO: Note
+{% note "Note" %}
+These modifications might require changing the split placement and the number of stitches picked up for the picot edge.
+{% endnote %}
 
 You can make your dress any length you desire! You can create a crop top, a knee-length dress, or even an ankle-length maxi dress. If you are making a crop top, skip the split altogether. For a maxi dress, consider adding a long, feminine slit that starts above your knee.
 

@@ -105,6 +105,18 @@ module.exports = function (eleventyConfig) {
     return `<div class="flex justify-center">${content}</div>`;
   });
 
+  eleventyConfig.addPairedShortcode("note", function (content, title) {
+    return `
+    <aside class="bg-shady-pink-lightest p-7 my-8">
+      <h2 class="not-prose text-neutral-900 text-xl text-center font-serif tracking-wide
+      relative pb-1.5 mb-4 after:border-t-4 after:w-16 after:border-shady-pink-light 
+        after:absolute after:left-1/2 after:-translate-x-1/2 after:bottom-0">${title}</h2> 
+        <div class="prose-p:text-neutral-900">
+          ${content}
+        </div>
+    </aside>`;
+  });
+
   // Let Eleventy transform HTML files as nunjucks
   // So that we can use .html instead of .njk
   eleventyConfig.ignores.add("src/admin/**");

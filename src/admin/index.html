@@ -164,6 +164,46 @@
           return `<div class="flex justify-center">${data.html}</div>`;
         },
       });
+      
+      CMS.registerEditorComponent({
+        id: "note",
+        label: "Note",
+        fields: [
+          {
+            name: "title",
+            label: "Title",
+            widget: "string",
+          },
+          {
+            name: "content",
+            label: "Content",
+            widget: "markdown",
+          }
+        ],
+        pattern: /^{%\s*note "(.*?)"\s*%}(.*?){%\s*endnote\s*%}$/ms,
+        fromBlock: function (match) {
+          return {
+            title: match[1],
+            content: match[2],
+          };
+        },
+        toBlock: function (data) {
+          return `{% note "${data.title}" %}${data.content}{% endnote %}`;
+        },
+        // Preview output for this component. Can either be a string or a React component
+        // (component gives better render performance)
+        toPreview: function (data) {
+          return `
+          <aside class="bg-shady-pink-lightest p-7 my-8">
+      <h2 class="not-prose text-neutral-900 text-xl text-center font-serif tracking-wide
+      relative pb-1.5 mb-4 after:border-t-4 after:w-16 after:border-shady-pink-light 
+        after:absolute after:left-1/2 after:-translate-x-1/2 after:bottom-0">${data.title}</h2> 
+        <div class="prose-p:text-neutral-900">
+          ${data.content}
+        </div>
+    </aside>`;
+        },
+      });
     </script>
   </body>
 </html>

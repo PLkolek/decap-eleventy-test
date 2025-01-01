@@ -9,6 +9,7 @@ module.exports = {
         "shady-pink-dark": "rgb(209, 136, 124)",
         "shady-pink": "rgb(211, 173, 154)",
         "shady-pink-light": "rgb(234, 210, 200)",
+        "shady-pink-lightest": "rgb(251, 243, 241)",
       },
       spacing: {
         112: "28rem",
