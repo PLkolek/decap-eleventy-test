@@ -95,7 +95,21 @@ Watch this short video to find out how to block your Darling Dress successfully:
 <iframe width="425" height="756" src="https://www.youtube.com/embed/LafxGaw7oc0" title="Sydney Summer Knits KAL [Darling Dress] Blocking" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 {% endvideo %}
 
-TODO: blocking instruction
+{% note "Blocking instruction" %}
+
+- Block it with the back facing you so you can see both necklines and sides of the straps.
+- Arrange the dress so it folds exactly at the sides.
+- Start by aligning the slit edges and pin it in place through both layers.
+- Arrange the necklines and the straps.
+- Pin the armpits.
+- Start pinning from the back neckline. Pin at least every second picot. Pin directly through the picots. Repeat for the front neckline.
+- Arrange the straps and check their measurements. Pin in place at the top.
+- Pair the corresponding picots and pin them together the same way as the neckline. The back neckline is narrower than the front one, which means that the back straps, right below the front neckline, will lay slightly diagonal when blocking. No worries – it does not affect the final effect, but it is much better to pin both layers of the straps together. This way you can ensure all the picots are flat and nicely highlighted.
+- Pin the armpit picots.
+- Pair the corresponding hem picots and pin them together exactly the same way as the necklines and the straps. Read more about blocking of picot edges in this article: Blocking of picots.
+- You may secure the sides to get the nice and straight line.
+
+  {% endnote %}
 
 ## About Sydney Summer Knits collection
 
